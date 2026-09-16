@@ -1,0 +1,68 @@
+name: Deploy Ripu Sudan Jewellers
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare website
+        run: |
+          mkdir -p _site/ripu-sudan-jewellers
+          cp -r ripu-sudan-jewellers/. _site/ripu-sudan-jewellers/
+
+      - name: Create root index
+        run: |
+          cat > _site/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="refresh" content="0; url=./ripu-sudan-jewellers/">
+            <title>Ripu Sudan Jewellers</title>
+          </head>
+          <body>
+            <p>
+              Redirecting to
+              <a href="./ripu-sudan-jewellers/">
+                Ripu Sudan Jewellers
+              </a>
+            </p>
+          </body>
+          </html>
+          EOF
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
