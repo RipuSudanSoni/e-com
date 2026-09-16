@@ -1,4 +1,4 @@
-name: Deploy Ripu Sudan Jewellers
+name: Deploy E-Com Websites
 
 on:
   push:
@@ -33,10 +33,10 @@ jobs:
       - name: Prepare website
         run: |
           mkdir _site
-          cp -r ripu-sudan-jewellers/* _site/
+          cp -r ripu-sudan-jewellers _site/
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 
