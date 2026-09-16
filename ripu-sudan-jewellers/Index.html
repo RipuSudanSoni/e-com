@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ripu Sudan Jewellers — Elegance, Crafted for You</title>
+  <meta name="description" content="Premium artificial jewellery — Earrings, Necklaces, Rings, Bracelets. Elegance, Crafted for You." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP ANNOUNCEMENT BAR
+  ============================================================ -->
+  <div class="announcement-bar">
+    <p>✦ Free Shipping on orders above ₹999 &nbsp;|&nbsp; Flat 20% OFF on first order — Use code <strong>RIPU20</strong> ✦</p>
+  </div>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+  ============================================================ -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner container">
+
+      <!-- Mobile menu toggle -->
+      <button class="icon-btn mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <!-- Logo -->
+      <a href="#home" class="logo" data-nav="home">
+        <span class="logo-mark">RS</span>
+        <span class="logo-text">
+          <strong>Ripu Sudan</strong>
+          <small>Jewellers</small>
+        </span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="#home" data-nav="home" class="nav-link active">Home</a></li>
+          <li><a href="#shop" data-nav="shop" class="nav-link">Shop</a></li>
+          <li class="has-dropdown">
+            <a href="#shop" data-nav="shop" class="nav-link">Categories ▾</a>
+            <ul class="dropdown">
+              <li><a href="#shop" data-category="earrings" class="nav-link">Earrings</a></li>
+              <li><a href="#shop" data-category="necklace" class="nav-link">Necklace</a></li>
+              <li><a href="#shop" data-category="rings" class="nav-link">Rings</a></li>
+              <li><a href="#shop" data-category="bracelets" class="nav-link">Bracelets</a></li>
+              <li><a href="#shop" data-category="bridal" class="nav-link">Bridal Sets</a></li>
+              <li><a href="#shop" data-category="anklets" class="nav-link">Anklets</a></li>
+            </ul>
+          </li>
+          <li><a href="#offers" data-nav="offers" class="nav-link">Offers</a></li>
+          <li><a href="#about" data-nav="about" class="nav-link">About</a></li>
+          <li><a href="#contact" data-nav="contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" id="wishlistToggle" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 21s-7-4.35-9.5-8.5C.7 9.6 2.3 5.5 6 5.5c2 0 3.4 1.1 4 2 .6-.9 2-2 4-2 3.7 0 5.3 4.1 3.5 7C19 16.65 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span class="badge" id="wishlistBadge">0</span>
+        </button>
+        <button class="icon-btn" id="cartToggle" aria-label="Cart">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6h15l-1.5 9h-12L6 6zM6 6L5 3H2M9 20a1 1 0 100-2 1 1 0 000 2zm9 0a1 1 0 100-2 1 1 0 000 2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="badge" id="cartBadge">0</span>
+        </button>
+        <button class="icon-btn" id="accountToggle" aria-label="Account">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Bar (expandable) -->
+    <div class="search-bar" id="searchBar">
+      <div class="container">
+        <input type="text" id="searchInput" placeholder="Search earrings, necklaces, rings…" />
+        <button class="btn btn-gold" id="searchSubmit">Search</button>
+        <button class="icon-btn" id="searchClose" aria-label="Close search">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE NAV DRAWER
+  ============================================================ -->
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <span class="logo-text"><strong>Ripu Sudan</strong><small>Jewellers</small></span>
+      <button class="icon-btn" id="mobileDrawerClose">✕</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#shop" data-nav="shop">Shop All</a>
+      <a href="#shop" data-category="earrings">Earrings</a>
+      <a href="#shop" data-category="necklace">Necklace</a>
+      <a href="#shop" data-category="rings">Rings</a>
+      <a href="#shop" data-category="bracelets">Bracelets</a>
+      <a href="#shop" data-category="bridal">Bridal Sets</a>
+      <a href="#offers" data-nav="offers">Offers</a>
+      <a href="#about" data-nav="about">About Us</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+      <a href="#" data-nav="account">My Account</a>
+      <a href="#policy" data-nav="policy">Policies</a>
+    </nav>
+  </aside>
+  <div class="overlay" id="drawerOverlay"></div>
+
+  <!-- ============================================================
+       MAIN CONTENT — All "pages" are sections toggled by JS
+  ============================================================ -->
+  <main id="app">
+
+    <!-- ========================================================
+         PAGE: HOME
+    ======================================================== -->
+    <section class="page active" id="page-home">
+
+      <!-- HERO -->
+      <div class="hero">
+        <div class="hero-content container">
+          <p class="eyebrow">New Festive Collection 2026</p>
+          <h1>Elegance, <em>Crafted</em> for You.</h1>
+          <p class="hero-sub">Handcrafted artificial jewellery that looks and feels like fine gold — without the price tag.</p>
+          <div class="hero-actions">
+            <button class="btn btn-gold" data-nav="shop">Shop Collection</button>
+            <button class="btn btn-outline" data-nav="offers">View Offers</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image-placeholder">Jewellery Photography</div>
+        </div>
+      </div>
+
+      <!-- TRUST STRIP -->
+      <div class="trust-strip">
+        <div class="container trust-grid">
+          <div class="trust-item"><span>✦</span><p>Anti-Tarnish Coating</p></div>
+          <div class="trust-item"><span>✦</span><p>Free Shipping ₹999+</p></div>
+          <div class="trust-item"><span>✦</span><p>7-Day Easy Returns</p></div>
+          <div class="trust-item"><span>✦</span><p>Secure Payments</p></div>
+        </div>
+      </div>
+
+      <!-- SHOP BY CATEGORY -->
+      <section class="section container">
+        <div class="section-head">
+          <h2>Shop by Category</h2>
+          <p>Find your perfect piece</p>
+        </div>
+        <div class="category-grid">
+          <button class="category-card" data-category="earrings">
+            <div class="cat-img">Earrings</div>
+            <h3>Earrings</h3>
+          </button>
+          <button class="category-card" data-category="necklace">
+            <div class="cat-img">Necklace</div>
+            <h3>Necklace</h3>
+          </button>
+          <button class="category-card" data-category="rings">
+            <div class="cat-img">Rings</div>
+            <h3>Rings</h3>
+          </button>
+          <button class="category-card" data-category="bracelets">
+            <div class="cat-img">Bracelets</div>
+            <h3>Bracelets</h3>
+          </button>
+          <button class="category-card" data-category="bridal">
+            <div class="cat-img">Bridal</div>
+            <h3>Bridal Sets</h3>
+          </button>
+          <button class="category-card" data-category="anklets">
+            <div class="cat-img">Anklets</div>
+            <h3>Anklets</h3>
+          </button>
+        </div>
+      </section>
+
+      <!-- FEATURED PRODUCTS -->
+      <section class="section container">
+        <div class="section-head row">
+          <div>
+            <h2>Bestsellers</h2>
+            <p>Loved by our customers</p>
+          </div>
+          <button class="btn btn-ghost" data-nav="shop">View All →</button>
+        </div>
+        <div class="product-grid" id="featuredGrid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- OFFER BANNER -->
+      <section class="offer-banner">
+        <div class="container offer-inner">
+          <div>
+            <p class="eyebrow">Limited Time</p>
+            <h2>Flat 20% OFF on First Order</h2>
+            <p>Use code <strong>RIPU20</strong> at checkout</p>
+          </div>
+          <button class="btn btn-dark" data-nav="shop">Grab the Deal</button>
+        </div>
+      </section>
+
+      <!-- WHY CHOOSE US -->
+      <section class="section container">
+        <div class="section-head"><h2>Why Ripu Sudan Jewellers?</h2></div>
+        <div class="feature-grid">
+          <div class="feature-card"><h3>Premium Finish</h3><p>Gold-plated with anti-tarnish coating that lasts.</p></div>
+          <div class="feature-card"><h3>Skin Friendly</h3><p>Nickel-free, hypoallergenic materials.</p></div>
+          <div class="feature-card"><h3>Gift Ready</h3><p>Every order comes in elegant packaging.</p></div>
+          <div class="feature-card"><h3>Made in India</h3><p>Handcrafted by skilled artisans.</p></div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="section container">
+        <div class="section-head"><h2>What Our Customers Say</h2></div>
+        <div class="testimonial-grid">
+          <blockquote class="testimonial">
+            <p>“The quality is unbelievable for the price. My earrings still look new after 6 months!”</p>
+            <cite>— Priya S., Delhi</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>“Bought a bridal set for my sister's wedding. Everyone thought it was real gold.”</p>
+            <cite>— Anjali M., Mumbai</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>“Fast delivery, beautiful packaging, and the necklace is stunning.”</p>
+            <cite>— Ritu K., Jaipur</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section class="newsletter">
+        <div class="container newsletter-inner">
+          <h2>Join the Ripu Sudan Family</h2>
+          <p>Get early access to new collections & exclusive offers.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit" class="btn btn-gold">Subscribe</button>
+          </form>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- ========================================================
+         PAGE: SHOP
+    ======================================================== -->
+    <section class="page" id="page-shop">
+      <div class="container">
+        <div class="page-head">
+          <h1 id="shopTitle">All Products</h1>
+          <p id="shopSubtitle">Discover our complete collection</p>
+        </div>
+
+        <div class="shop-layout">
+          <!-- FILTERS SIDEBAR -->
+          <aside class="filters" id="filtersPanel">
+            <div class="filters-head">
+              <h3>Filters</h3>
+              <button class="btn-link" id="clearFilters">Clear All</button>
+            </div>
+
+            <div class="filter-group">
+              <h4>Category</h4>
+              <label><input type="checkbox" class="filter-category" value="earrings" /> Earrings</label>
+              <label><input type="checkbox" class="filter-category" value="necklace" /> Necklace</label>
+              <label><input type="checkbox" class="filter-category" value="rings" /> Rings</label>
+              <label><input type="checkbox" class="filter-category" value="bracelets" /> Bracelets</label>
+              <label><input type="checkbox" class="filter-category" value="bridal" /> Bridal Sets</label>
+              <label><input type="checkbox" class="filter-category" value="anklets" /> Anklets</label>
+            </div>
+
+            <div class="filter-group">
+              <h4>Price Range</h4>
+              <input type="range" id="priceRange" min="0" max="5000" step="100" value="5000" />
+              <p class="range-label">Up to ₹<span id="priceValue">5000</span></p>
+            </div>
+
+            <div class="filter-group">
+              <h4>Material</h4>
+              <label><input type="checkbox" class="filter-material" value="gold-plated" /> Gold Plated</label>
+              <label><input type="checkbox" class="filter-material" value="rose-gold" /> Rose Gold</label>
+              <label><input type="checkbox" class="filter-material" value="silver-plated" /> Silver Plated</label>
+              <label><input type="checkbox" class="filter-material" value="oxidised" /> Oxidised</label>
+            </div>
+
+            <div class="filter-group">
+              <h4>Availability</h4>
+              <label><input type="checkbox" id="filterInStock" /> In Stock Only</label>
+            </div>
+          </aside>
+
+          <!-- PRODUCTS AREA -->
+          <div class="shop-main">
+            <div class="shop-toolbar">
+              <p class="result-count"><span id="resultCount">0</span> products</p>
+              <div class="sort-wrap">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect">
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="newest">Newest</option>
+                  <option value="rating">Top Rated</option>
+                </select>
+              </div>
+              <button class="btn btn-outline filter-toggle-mobile" id="filterToggleMobile">Filters</button>
+            </div>
+
+            <div class="product-grid" id="shopGrid">
+              <!-- Populated by JS -->
+            </div>
+
+            <div class="empty-state" id="shopEmpty" hidden>
+              <h3>No products found</h3>
+              <p>Try adjusting your filters or search.</p>
+              <button class="btn btn-gold" id="resetFromEmpty">Reset Filters</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: PRODUCT DETAILS
+    ======================================================== -->
+    <section class="page" id="page-product">
+      <div class="container">
+        <button class="btn-link back-link" id="backToShop">← Back to Shop</button>
+        <div class="product-detail" id="productDetail">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: CART
+    ======================================================== -->
+    <section class="page" id="page-cart">
+      <div class="container">
+        <div class="page-head"><h1>Your Cart</h1></div>
+        <div class="cart-layout">
+          <div class="cart-items" id="cartItems">
+            <!-- Populated by JS -->
+          </div>
+          <aside class="cart-summary" id="cartSummary">
+            <h3>Order Summary</h3>
+            <div class="summary-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+            <div class="summary-row"><span>Shipping</span><span id="cartShipping">₹0</span></div>
+            <div class="summary-row discount-row" id="discountRow" hidden><span>Discount</span><span id="cartDiscount">-₹0</span></div>
+            <div class="summary-row total-row"><span>Total</span><span id="cartTotal">₹0</span></div>
+
+            <div class="coupon-box">
+              <input type="text" id="couponInput" placeholder="Coupon code" />
+              <button class="btn btn-outline" id="applyCoupon">Apply</button>
+            </div>
+            <p class="coupon-hint" id="couponHint">Try <strong>RIPU20</strong> for 20% off</p>
+
+            <button class="btn btn-gold btn-block" id="checkoutBtn">Proceed to Checkout</button>
+            <button class="btn btn-ghost btn-block" data-nav="shop">Continue Shopping</button>
+          </aside>
+        </div>
+        <div class="empty-state" id="cartEmpty" hidden>
+          <h3>Your cart is empty</h3>
+          <p>Add some sparkle to your life.</p>
+          <button class="btn btn-gold" data-nav="shop">Shop Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: WISHLIST
+    ======================================================== -->
+    <section class="page" id="page-wishlist">
+      <div class="container">
+        <div class="page-head"><h1>Your Wishlist</h1></div>
+        <div class="product-grid" id="wishlistGrid"></div>
+        <div class="empty-state" id="wishlistEmpty" hidden>
+          <h3>Your wishlist is empty</h3>
+          <p>Save your favourite pieces here.</p>
+          <button class="btn btn-gold" data-nav="shop">Browse Products</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: CHECKOUT
+    ======================================================== -->
+    <section class="page" id="page-checkout">
+      <div class="container">
+        <div class="page-head"><h1>Checkout</h1></div>
+        <div class="checkout-layout">
+          <div class="checkout-form">
+            <h3>Shipping Address</h3>
+            <form id="checkoutForm">
+              <div class="form-row">
+                <input type="text" placeholder="Full Name" required />
+                <input type="tel" placeholder="Phone Number" required />
+              </div>
+              <input type="email" placeholder="Email Address" required />
+              <input type="text" placeholder="Address Line 1" required />
+              <input type="text" placeholder="Address Line 2 (Optional)" />
+              <div class="form-row">
+                <input type="text" placeholder="City" required />
+                <input type="text" placeholder="State" required />
+                <input type="text" placeholder="PIN Code" required />
+              </div>
+
+              <h3>Payment Method</h3>
+              <div class="payment-methods">
+                <label class="pay-option"><input type="radio" name="payment" value="cod" checked /> Cash on Delivery</label>
+                <label class="pay-option"><input type="radio" name="payment" value="upi" /> UPI</label>
+                <label class="pay-option"><input type="radio" name="payment" value="card" /> Credit / Debit Card</label>
+                <label class="pay-option"><input type="radio" name="payment" value="netbanking" /> Net Banking</label>
+              </div>
+
+              <button type="submit" class="btn btn-gold btn-block" id="placeOrderBtn">Place Order</button>
+            </form>
+          </div>
+
+          <aside class="checkout-summary">
+            <h3>Your Order</h3>
+            <div id="checkoutItems"></div>
+            <div class="summary-row"><span>Subtotal</span><span id="checkoutSubtotal">₹0</span></div>
+            <div class="summary-row"><span>Shipping</span><span id="checkoutShipping">₹0</span></div>
+            <div class="summary-row total-row"><span>Total</span><span id="checkoutTotal">₹0</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: ORDER SUCCESS
+    ======================================================== -->
+    <section class="page" id="page-order-success">
+      <div class="container center-content">
+        <div class="success-card">
+          <div class="success-icon">✓</div>
+          <h1>Thank You for Your Order!</h1>
+          <p>Your order has been placed successfully.</p>
+          <p class="order-id">Order ID: <strong id="successOrderId">#RSJ000000</strong></p>
+          <div class="success-actions">
+            <button class="btn btn-gold" data-nav="orders">Track Order</button>
+            <button class="btn btn-outline" data-nav="shop">Continue Shopping</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: LOGIN / REGISTER
+    ======================================================== -->
+    <section class="page" id="page-auth">
+      <div class="container center-content">
+        <div class="auth-card">
+          <div class="auth-tabs">
+            <button class="auth-tab active" data-auth="login">Login</button>
+            <button class="auth-tab" data-auth="register">Register</button>
+          </div>
+
+          <form class="auth-form active" id="loginForm">
+            <h2>Welcome Back</h2>
+            <input type="email" placeholder="Email" required />
+            <input type="password" placeholder="Password" required />
+            <button type="submit" class="btn btn-gold btn-block">Login</button>
+            <p class="auth-hint">Demo: any email/password works.</p>
+          </form>
+
+          <form class="auth-form" id="registerForm">
+            <h2>Create Account</h2>
+            <input type="text" placeholder="Full Name" required />
+            <input type="email" placeholder="Email" required />
+            <input type="tel" placeholder="Phone" required />
+            <input type="password" placeholder="Password" required />
+            <button type="submit" class="btn btn-gold btn-block">Register</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: MY ACCOUNT
+    ======================================================== -->
+    <section class="page" id="page-account">
+      <div class="container">
+        <div class="page-head"><h1>My Account</h1></div>
+        <div class="account-layout">
+          <aside class="account-nav">
+            <button class="account-tab active" data-account="profile">Profile</button>
+            <button class="account-tab" data-account="addresses">Addresses</button>
+            <button class="account-tab" data-nav="orders">My Orders</button>
+            <button class="account-tab" data-nav="wishlist">Wishlist</button>
+            <button class="account-tab" data-account="returns">Returns</button>
+            <button class="account-tab" id="logoutBtn">Logout</button>
+          </aside>
+
+          <div class="account-content">
+            <div class="account-panel active" id="panel-profile">
+              <h2>Profile</h2>
+              <div class="form-row">
+                <input type="text" value="Guest User" />
+                <input type="email" value="guest@example.com" />
+              </div>
+              <input type="tel" value="+91 90000 00000" />
+              <button class="btn btn-gold" id="saveProfile">Save Changes</button>
+            </div>
+
+            <div class="account-panel" id="panel-addresses">
+              <h2>Saved Addresses</h2>
+              <div class="address-card">
+                <p><strong>Home</strong></p>
+                <p>123, Sample Street, Mumbai, Maharashtra — 400001</p>
+                <button class="btn-link">Edit</button>
+              </div>
+              <button class="btn btn-outline" id="addAddressBtn">+ Add New Address</button>
+            </div>
+
+            <div class="account-panel" id="panel-returns">
+              <h2>Returns & Cancellation</h2>
+              <p>To request a return, go to <button class="btn-link" data-nav="orders">My Orders</button> and select the item.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: MY ORDERS
+    ======================================================== -->
+    <section class="page" id="page-orders">
+      <div class="container">
+        <div class="page-head"><h1>My Orders</h1></div>
+        <div id="ordersList"></div>
+        <div class="empty-state" id="ordersEmpty" hidden>
+          <h3>No orders yet</h3>
+          <p>Your placed orders will appear here.</p>
+          <button class="btn btn-gold" data-nav="shop">Start Shopping</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: ORDER TRACKING
+    ======================================================== -->
+    <section class="page" id="page-tracking">
+      <div class="container">
+        <div class="page-head"><h1>Track Your Order</h1></div>
+        <div class="tracking-card">
+          <p class="order-id">Order ID: <strong id="trackingOrderId">#RSJ000000</strong></p>
+          <div class="tracking-steps">
+            <div class="track-step done"><span>1</span><p>Order Placed</p></div>
+            <div class="track-step done"><span>2</span><p>Packed</p></div>
+            <div class="track-step active"><span>3</span><p>Shipped</p></div>
+            <div class="track-step"><span>4</span><p>Out for Delivery</p></div>
+            <div class="track-step"><span>5</span><p>Delivered</p></div>
+          </div>
+          <p class="tracking-note">Expected delivery: 3–5 business days</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: OFFERS
+    ======================================================== -->
+    <section class="page" id="page-offers">
+      <div class="container">
+        <div class="page-head"><h1>Offers & Coupons</h1><p>Save more on your favourites</p></div>
+        <div class="offers-grid">
+          <div class="offer-card">
+            <h3>RIPU20</h3>
+            <p>Flat 20% OFF on your first order</p>
+            <button class="btn btn-gold copy-coupon" data-code="RIPU20">Copy Code</button>
+          </div>
+          <div class="offer-card">
+            <h3>FESTIVE500</h3>
+            <p>₹500 OFF on orders above ₹2999</p>
+            <button class="btn btn-gold copy-coupon" data-code="FESTIVE500">Copy Code</button>
+          </div>
+          <div class="offer-card">
+            <h3>FREESHIP</h3>
+            <p>Free shipping on all orders</p>
+            <button class="btn btn-gold copy-coupon" data-code="FREESHIP">Copy Code</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: ABOUT
+    ======================================================== -->
+    <section class="page" id="page-about">
+      <div class="container narrow">
+        <div class="page-head"><h1>About Ripu Sudan Jewellers</h1></div>
+        <p>Ripu Sudan Jewellers was born from a simple belief — that every woman deserves to feel elegant, without compromising her budget.</p>
+        <p>We craft premium artificial jewellery using gold-plated alloys, anti-tarnish coatings, and skin-friendly materials. Each piece is designed in-house and handcrafted by skilled Indian artisans.</p>
+        <p>From daily wear to bridal sets, our collections are made to be worn, loved, and remembered.</p>
+        <div class="about-values">
+          <div><h3>Our Mission</h3><p>Make premium-look jewellery accessible to every Indian woman.</p></div>
+          <div><h3>Our Promise</h3><p>Quality, honesty, and elegant design — always.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: CONTACT
+    ======================================================== -->
+    <section class="page" id="page-contact">
+      <div class="container">
+        <div class="page-head"><h1>Contact Us</h1><p>We'd love to hear from you</p></div>
+        <div class="contact-layout">
+          <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <input type="tel" placeholder="Phone (Optional)" />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn btn-gold">Send Message</button>
+          </form>
+          <aside class="contact-info">
+            <h3>Reach Us</h3>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/919000000000" target="_blank" rel="noopener">+91 90000 00000</a></p>
+            <p><strong>Email:</strong> <a href="mailto:care@ripusudanjewellers.com">care@ripusudanjewellers.com</a></p>
+            <p><strong>Hours:</strong> Mon–Sat, 10 AM – 7 PM</p>
+            <button class="btn btn-outline btn-block" id="whatsappBtn">Chat on WhatsApp</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: POLICIES (tabbed)
+    ======================================================== -->
+    <section class="page" id="page-policy">
+      <div class="container narrow">
+        <div class="page-head"><h1>Policies</h1></div>
+        <div class="policy-tabs">
+          <button class="policy-tab active" data-policy="privacy">Privacy Policy</button>
+          <button class="policy-tab" data-policy="terms">Terms & Conditions</button>
+          <button class="policy-tab" data-policy="shipping">Shipping Policy</button>
+          <button class="policy-tab" data-policy="return">Return Policy</button>
+        </div>
+        <div class="policy-content">
+          <div class="policy-panel active" id="policy-privacy">
+            <h2>Privacy Policy</h2>
+            <p>We respect your privacy. Your personal information is used only to process orders and improve your shopping experience. We never sell your data to third parties.</p>
+          </div>
+          <div class="policy-panel" id="policy-terms">
+            <h2>Terms & Conditions</h2>
+            <p>By using this website, you agree to our terms of service. Prices, offers, and availability are subject to change without notice.</p>
+          </div>
+          <div class="policy-panel" id="policy-shipping">
+            <h2>Shipping Policy</h2>
+            <p>Orders are dispatched within 24–48 hours. Delivery takes 3–5 business days across India. Free shipping on orders above ₹999.</p>
+          </div>
+          <div class="policy-panel" id="policy-return">
+            <h2>Return Policy</h2>
+            <p>We accept returns within 7 days of delivery for unused items in original packaging. Refunds are processed within 5–7 business days.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         PAGE: ADMIN DASHBOARD (preview)
+    ======================================================== -->
+    <section class="page" id="page-admin">
+      <div class="container">
+        <div class="page-head"><h1>Admin Dashboard <small>(Preview)</small></h1></div>
+        <div class="admin-stats">
+          <div class="stat-card"><p>Total Products</p><h3 id="statProducts">0</h3></div>
+          <div class="stat-card"><p>Total Orders</p><h3 id="statOrders">0</h3></div>
+          <div class="stat-card"><p>Customers</p><h3 id="statCustomers">0</h3></div>
+          <div class="stat-card"><p>Revenue</p><h3 id="statRevenue">₹0</h3></div>
+        </div>
+
+        <div class="admin-tabs">
+          <button class="admin-tab active" data-admin="products">Products</button>
+          <button class="admin-tab" data-admin="orders">Orders</button>
+          <button class="admin-tab" data-admin="customers">Customers</button>
+          <button class="admin-tab" data-admin="coupons">Coupons</button>
+        </div>
+
+        <div class="admin-panel active" id="admin-products">
+          <button class="btn btn-gold" id="addProductBtn">+ Add Product</button>
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Action</th></tr></thead>
+            <tbody id="adminProductsBody"></tbody>
+          </table>
+        </div>
+
+        <div class="admin-panel" id="admin-orders">
+          <table class="admin-table">
+            <thead><tr><th>Order ID</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead>
+            <tbody id="adminOrdersBody"></tbody>
+          </table>
+        </div>
+
+        <div class="admin-panel" id="admin-customers">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Email</th><th>Orders</th></tr></thead>
+            <tbody id="adminCustomersBody"></tbody>
+          </table>
+        </div>
+
+        <div class="admin-panel" id="admin-coupons">
+          <button class="btn btn-gold" id="addCouponBtn">+ Add Coupon</button>
+          <table class="admin-table">
+            <thead><tr><th>Code</th><th>Discount</th><th>Status</th></tr></thead>
+            <tbody id="adminCouponsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Ripu Sudan Jewellers</h4>
+        <p>Elegance, Crafted for You.</p>
+        <p class="footer-tag">Premium artificial jewellery — handcrafted in India.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="#shop" data-category="earrings">Earrings</a>
+        <a href="#shop" data-category="necklace">Necklace</a>
+        <a href="#shop" data-category="rings">Rings</a>
+        <a href="#shop" data-category="bracelets">Bracelets</a>
+        <a href="#shop" data-category="bridal">Bridal Sets</a>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <a href="#contact" data-nav="contact">Contact Us</a>
+        <a href="#orders" data-nav="orders">Track Order</a>
+        <a href="#policy" data-nav="policy">Return Policy</a>
+        <a href="#policy" data-nav="policy">Shipping Policy</a>
+        <a href="#policy" data-nav="policy">FAQs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about" data-nav="about">About Us</a>
+        <a href="#policy" data-nav="policy">Privacy Policy</a>
+        <a href="#policy" data-nav="policy">Terms & Conditions</a>
+        <!-- <a href="#admin" data-nav="admin">Admin Panel</a> -->
+        <p> <strong>Open Admin Panel press :- "ctrl + shift + A"</strong></p>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2026 Ripu Sudan Jewellers. All rights reserved.</p>
+      <p>Made with ♥ in India</p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       MOBILE BOTTOM NAVIGATION
+  ============================================================ -->
+  <nav class="mobile-bottom-nav">
+    <button data-nav="home" class="active"><span>⌂</span>Home</button>
+    <button data-nav="shop"><span>◈</span>Shop</button>
+    <button data-nav="wishlist"><span>♡</span>Wishlist</button>
+    <button data-nav="cart"><span>▤</span>Cart</button>
+    <button data-nav="account"><span>◉</span>Account</button>
+  </nav>
+
+  <!-- ============================================================
+       QUICK VIEW MODAL
+  ============================================================ -->
+  <div class="modal" id="quickViewModal">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-content modal-large">
+      <button class="modal-close" data-close-modal>✕</button>
+      <div class="quick-view-body" id="quickViewBody"><!-- Populated by JS --></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       GENERIC INFO MODAL (for "not connected" messages)
+  ============================================================ -->
+  <div class="modal" id="infoModal">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-content modal-small">
+      <button class="modal-close" data-close-modal>✕</button>
+      <h3 id="infoModalTitle">Notice</h3>
+      <p id="infoModalMessage">This feature is not connected in the prototype.</p>
+      <button class="btn btn-gold btn-block" data-close-modal>Got it</button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOAST NOTIFICATION AREA
+  ============================================================ -->
+  <div class="toast-area" id="toastArea"></div>
+
+  <!-- ============================================================
+       LOADING OVERLAY
+  ============================================================ -->
+  <div class="loader" id="loader" hidden>
+    <div class="spinner"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
