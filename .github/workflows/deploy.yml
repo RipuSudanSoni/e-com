@@ -33,7 +33,27 @@ jobs:
       - name: Prepare website
         run: |
           mkdir _site
+
           cp -r ripu-sudan-jewellers _site/
+
+          cat > _site/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="refresh" content="0; url=./ripu-sudan-jewellers/">
+              <title>Ripu Sudan Jewellers</title>
+          </head>
+          <body>
+              <p>
+                  Redirecting to
+                  <a href="./ripu-sudan-jewellers/">
+                      Ripu Sudan Jewellers
+                  </a>
+              </p>
+          </body>
+          </html>
+          EOF
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
