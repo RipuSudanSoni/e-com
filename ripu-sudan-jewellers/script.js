@@ -902,11 +902,17 @@
         $('#clearFilters').click();
       });
     }
-    const filterMobile = $('#filterToggleMobile');
+        const filterMobile = $('#filterToggleMobile');
     if (filterMobile) {
       filterMobile.addEventListener('click', () => {
         const panel = $('#filtersPanel');
         panel.classList.toggle('open');
+      });
+    }
+    const filtersClose = $('#filtersCloseMobile');
+    if (filtersClose) {
+      filtersClose.addEventListener('click', () => {
+        $('#filtersPanel').classList.remove('open');
       });
     }
   }
