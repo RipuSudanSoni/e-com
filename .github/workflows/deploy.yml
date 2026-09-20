@@ -33,22 +33,22 @@ jobs:
 
       - name: Prepare website
         run: |
-          # 1. नया फ़ोल्डर स्ट्रक्चर तैयार करें
-          mkdir -p _site/demo-site/e-com/ripu-sudan-jewellers
+          # 1. e-com/ripu-sudan-jewellers डायरेक्टरी बनाएं
+          mkdir -p _site/e-com/ripu-sudan-jewellers
 
-          # 2. ripu-sudan-jewellers की सभी फ़ाइलें उस नए पाथ में कॉपी करें
-          cp -R ripu-sudan-jewellers/* _site/demo-site/e-com/ripu-sudan-jewellers/
+          # 2. ripu-sudan-jewellers की सभी फ़ाइलें कॉपी करें
+          cp -R ripu-sudan-jewellers/* _site/e-com/ripu-sudan-jewellers/
 
-          # 3. रूट URL पर जाने वाले को सीधे इस नए पेज पर भेजने के लिए रीडायरेक्ट बनाएं
+          # 3. रूट URL पर जाने वाले को सीधे इस पेज पर भेजने के लिए रीडायरेक्ट बनाएं
           cat << 'EOF' > _site/index.html
           <!DOCTYPE html>
           <html>
             <head>
-              <meta http-equiv="refresh" content="0; url=./demo-site/e-com/ripu-sudan-jewellers/">
-              <script>window.location.href = "./demo-site/e-com/ripu-sudan-jewellers/";</script>
+              <meta http-equiv="refresh" content="0; url=./e-com/ripu-sudan-jewellers/">
+              <script>window.location.href = "./e-com/ripu-sudan-jewellers/";</script>
             </head>
             <body>
-              <p>Redirecting to <a href="./demo-site/e-com/ripu-sudan-jewellers/">Ripu Sudan Jewellers</a>...</p>
+              <p>Redirecting to <a href="./e-com/ripu-sudan-jewellers/">Ripu Sudan Jewellers</a>...</p>
             </body>
           </html>
           EOF
