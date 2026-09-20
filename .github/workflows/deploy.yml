@@ -33,13 +33,11 @@ jobs:
 
       - name: Prepare website
         run: |
-          # 1. e-com/ripu-sudan-jewellers डायरेक्टरी बनाएं
-          mkdir -p _site/e-com/ripu-sudan-jewellers
+          mkdir -p _site
+          # अब सीधे e-com फ़ोल्डर को _site के अंदर कॉपी करें
+          cp -R e-com _site/
 
-          # 2. ripu-sudan-jewellers की सभी फ़ाइलें कॉपी करें
-          cp -R ripu-sudan-jewellers/* _site/e-com/ripu-sudan-jewellers/
-
-          # 3. रूट URL पर जाने वाले को सीधे इस पेज पर भेजने के लिए रीडायरेक्ट बनाएं
+          # रूट URL पर जाने वाले को सीधे ripu-sudan-jewellers पर भेजने के लिए रीडायरेक्ट
           cat << 'EOF' > _site/index.html
           <!DOCTYPE html>
           <html>
